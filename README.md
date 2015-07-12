@@ -15,7 +15,7 @@ Then attach your browsers nodes:
 
 where `webserver` is the container for your webserver
 
-Then you need to set the right urls in `conf.js` and `spec.js`, using `hub` as shostname for the selenium server and `proxy` for the webserver.
+Then you need to set the right urls in `conf.js` and `spec.js`, using `hub` as shostname for the selenium server and `web` for the webserver.
 
 Then you can start the protactor container:
 
