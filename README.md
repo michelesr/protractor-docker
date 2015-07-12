@@ -4,12 +4,19 @@ Protractor image for `docker`.
 
 ## Usage
 
-In order to use this image, you need to:
+Start `selenium-hub` first:
 
-- link to a `selenium-hub` container (that is linked with the browsers nodes)
-- mount the test directory on `/test`
-- adapt your configuration file with the right hostnames
+    docker run -d --name hub selenium/hub
 
-## Example 
+Then attach your browsers nodes:
 
-`TODO`
+		docker run -d --name firefox --link hub:hub --link webserver:web node-firefox
+		docker run -d --name chrome --link hub:hub --link webserver:web node-chrome
+
+where `webserver` is the container for your webserver
+
+Then you need to set the right urls in `conf.js` and `spec.js`, using `hub` as shostname for the selenium server and `proxy` for the webserver.
+
+Then you can start the protactor container:
+
+		docker run --rm -v /abs/path/to/your/test/:/test/:ro --link hub:hub michelesr/protractor
