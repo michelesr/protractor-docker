@@ -1,12 +1,4 @@
-FROM debian
-
-RUN apt-get update
-
-RUN apt-get install -y nodejs 
-
-RUN ln -s $(which nodejs) /usr/bin/node
-
-RUN apt-get install -y npm
+FROM iojs:2.3
 
 RUN npm install -g protractor
 
