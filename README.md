@@ -21,4 +21,4 @@ Then you need to set the right urls in `conf.js` and `spec.js`, using `hub` as h
 
 Then you can start the protactor container:
 
-	docker run --rm -v /abs/path/to/your/test/:/test/:ro --link hub:hub michelesr/protractor
+	docker run --rm -v /abs/path/to/your/test/:/code/:ro --link hub:hub michelesr/protractor

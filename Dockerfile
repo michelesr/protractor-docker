@@ -1,9 +1,11 @@
 FROM iojs:2.3
 
+MAINTAINER Michele Sorcinelli "mikefender@cryptolab.net"
+
 RUN npm install -g protractor
 
-RUN mkdir test
+RUN mkdir /code
 
-WORKDIR test
+WORKDIR /code
 
 CMD ["protractor", "conf.js"] 
