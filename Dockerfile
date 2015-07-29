@@ -1,4 +1,4 @@
-FROM iojs:2.3
+FROM iojs:2.4
 
 MAINTAINER Michele Sorcinelli "mikefender@cryptolab.net"
 
